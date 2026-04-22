@@ -1,0 +1,118 @@
+{
+  "project_info": {
+    "project_number": "903782548174",
+    "project_id": "myprojectfirebase-ed480",
+    "storage_bucket": "myprojectfirebase-ed480.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903782548174:android:16a59e21d95f48d4f7c69f",
+        "android_client_info": {
+          "package_name": "com.example.flutter_notes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "903782548174-ch0llks7f8dbup4j7njjdibaub7qhpr2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARHsxKIBb0e8SUa0s9kcc3BQ_R8l5_WAQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "903782548174-ch0llks7f8dbup4j7njjdibaub7qhpr2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "903782548174-c0n0gai0nd4ld4mra4hugijsf23ba6bj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.uts1123150125Bagstore"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903782548174:android:181ef91e770a7df5f7c69f",
+        "android_client_info": {
+          "package_name": "com.example.uts_1123150125_bagstore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "903782548174-ch0llks7f8dbup4j7njjdibaub7qhpr2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARHsxKIBb0e8SUa0s9kcc3BQ_R8l5_WAQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "903782548174-ch0llks7f8dbup4j7njjdibaub7qhpr2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "903782548174-c0n0gai0nd4ld4mra4hugijsf23ba6bj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.uts1123150125Bagstore"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903782548174:android:e9785de9482eebd6f7c69f",
+        "android_client_info": {
+          "package_name": "com.example.week_10"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "903782548174-ch0llks7f8dbup4j7njjdibaub7qhpr2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARHsxKIBb0e8SUa0s9kcc3BQ_R8l5_WAQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "903782548174-ch0llks7f8dbup4j7njjdibaub7qhpr2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "903782548174-c0n0gai0nd4ld4mra4hugijsf23ba6bj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.uts1123150125Bagstore"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
