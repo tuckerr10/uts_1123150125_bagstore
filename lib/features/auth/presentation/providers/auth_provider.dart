@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
+import 'package:google_sign_in/google_sign_in.dart';
 import '../../data/repositories/auth_repository_impl.dart';
 import '../../../../core/services/secure_storage.dart';
 
@@ -21,7 +21,7 @@ class AuthProvider extends ChangeNotifier {
 
   AuthProvider() {
     _auth.authStateChanges().listen((user) {
-      // ✅ Block listener saat login/register/verify sedang berjalan
+      // Block listener saat login/register/verify sedang berjalan
       if (_isManualFlow) return;
 
       _firebaseUser = user;
@@ -132,9 +132,72 @@ class AuthProvider extends ChangeNotifier {
   }
 
   Future<void> loginWithGoogle() async {
-    _setLoading();
-    _setError('Google login is not implemented');
+
+  _setLoading();
+
+  try {
+
+    final googleSignIn = GoogleSignIn();
+
+    final googleUser = await googleSignIn.signIn();
+
+    // User cancel
+
+    if (googleUser == null) {
+
+      _status = AuthStatus.unauthenticated;
+
+      _isManualFlow = false;
+
+      notifyListeners();
+
+      return;
+
+    }
+
+    final googleAuth = await googleUser.authentication;
+
+    final credential = GoogleAuthProvider.credential(
+
+      accessToken: googleAuth.accessToken,
+
+      idToken: googleAuth.idToken,
+
+    );
+
+    final userCredential = await _auth.signInWithCredential(credential);
+
+    final user = userCredential.user;
+
+    _firebaseUser = user;
+
+    final idToken = await user?.getIdToken();
+
+    if (idToken != null) {
+
+      final authRepo = AuthRepositoryImpl();
+
+      final backendToken = await authRepo.verifyFirebaseToken(idToken);
+
+      await SecureStorageService.saveToken(backendToken);
+
+      _status = AuthStatus.authenticated;
+
+    }
+
+  } catch (e) {
+
+    debugPrint('GOOGLE LOGIN ERROR: $e');
+
+    _setError(e.toString());
+
   }
+
+  _isManualFlow = false;
+
+  notifyListeners();
+
+}
 
   Future<void> logout() async {
     _isManualFlow = false; // ✅ Reset flag saat logout
