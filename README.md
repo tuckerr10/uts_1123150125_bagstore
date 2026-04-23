@@ -179,25 +179,58 @@ flutter run
 ```
 uts_1123150125_bagstore/
 ├── lib/
-│   ├── main.dart
-│   ├── screens/
-│   │   ├── splash_screen.dart
-│   │   ├── login_screen.dart
-│   │   ├── register_screen.dart
-│   │   ├── home_screen.dart
-│   │   ├── product_detail_screen.dart
-│   │   └── cart_screen.dart
-│   └── services/
-│       ├── auth_service.dart
-│       └── product_service.dart
+│   ├── core/
+│   │   ├── constants/
+│   │   │   ├── api_constants.dart
+│   │   │   ├── app_colors.dart
+│   │   │   └── app_strings.dart
+│   │   ├── routes/
+│   │   │   ├── app_router.dart
+│   │   │   └── auth_guard.dart
+│   │   ├── services/
+│   │   │   ├── dio_client.dart
+│   │   │   └── secure_storage.dart
+│   │   └── theme/
+│   │       └── app_theme.dart
+│   ├── features/
+│   │   ├── auth/
+│   │   │   ├── data/repositories/
+│   │   │   │   └── auth_repository_impl.dart
+│   │   │   ├── domain/repositories/
+│   │   │   │   └── auth_repository.dart
+│   │   │   └── presentation/
+│   │   │       ├── pages/
+│   │   │       │   ├── login_page.dart
+│   │   │       │   ├── register_page.dart
+│   │   │       │   └── verify_email_page.dart
+│   │   │       ├── providers/
+│   │   │       │   └── auth_provider.dart
+│   │   │       └── widgets/
+│   │   │           ├── auth_header.dart
+│   │   │           ├── custom_button.dart
+│   │   │           ├── custom_text_field.dart
+│   │   │           ├── divider_with_text.dart
+│   │   │           ├── google_sign_in_button.dart
+│   │   │           └── loading_overlay.dart
+│   │   └── dashboard/
+│   │       ├── data/models/
+│   │       │   └── product_model.dart
+│   │       └── presentation/
+│   │           ├── pages/
+│   │           │   ├── cart_page.dart
+│   │           │   ├── dashboard_page.dart
+│   │           │   └── product_detail_page.dart
+│   │           └── providers/
+│   │               ├── cart_provider.dart
+│   │               └── product_provider.dart
+│   ├── splash/presentation/screens/
+│   │   └── splash_screen.dart
+│   ├── firebase_options.dart
+│   └── main.dart
 ├── android/
 │   ├── app/build.gradle.kts
 │   ├── build.gradle.kts
 │   └── settings.gradle.kts
-├── bag_store_backend/
-│   ├── main.go
-│   ├── go.mod
-│   └── serviceAccountKey.json
 └── README.md
 ```
 
