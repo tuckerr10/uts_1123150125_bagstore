@@ -23,10 +23,29 @@ class GoogleSignInButton extends StatelessWidget {
             : Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // Pastikan kamu punya logo google di folder assets
-                  Image.network('https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Logo.svg', height: 22, errorBuilder: (context, error, stackTrace) => const Icon(Icons.account_circle)),
+                  // ✅ Ganti ke PNG biar support Flutter Web
+                  Image.network(
+                    'https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg',
+                    height: 22,
+                    errorBuilder: (_, __, ___) => Container(
+                      width: 22,
+                      height: 22,
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Center(
+                        child: Text('G', style: TextStyle(
+                          color: Color(0xFF4285F4),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        )),
+                      ),
+                    ),
+                  ),
                   const SizedBox(width: 12),
-                  const Text('Lanjutkan dengan Google', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black87)),
+                  const Text('Lanjutkan dengan Google',
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black87)),
                 ],
               ),
       ),
