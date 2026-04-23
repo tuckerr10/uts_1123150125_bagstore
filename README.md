@@ -169,12 +169,20 @@ cd uts_1123150125_bagstore
 flutter pub get
 ```
 
-### 3. Jalankan Backend Golang
+### 3. Jalankan Backend Golang (Local)
+
+Clone backend dari repo terpisah:
+```bash
+git clone https://github.com/tuckerr10/bag_store_backend.git
+cd bag_store_backend
+```
+
+Tambahkan file `serviceAccountKey.json` dari Firebase Console ke folder tersebut, lalu:
 ```bash
 # Pastikan XAMPP sudah nyala (MySQL aktif)
-cd bag_store_backend
 go run main.go
 ```
+> ⚠️ **Catatan:** Backend berjalan secara lokal. Pastikan XAMPP aktif dan HP berada di jaringan WiFi yang sama dengan laptop. Sesuaikan IP di konfigurasi dengan IP lokal laptop kamu (`ipconfig` → IPv4).
 
 ### 4. Jalankan Aplikasi Flutter
 ```bash
