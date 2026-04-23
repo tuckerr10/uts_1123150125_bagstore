@@ -22,7 +22,7 @@
 | Verifikasi Email | Link Email | Pilih Akun Google | Home Produk |
 |:---:|:---:|:---:|:---:|
 | <img width="200" src="https://github.com/user-attachments/assets/81f0e020-edaa-4892-8327-23abe228c224" /> | <img width="200" src="https://github.com/user-attachments/assets/0a15a20d-37c5-4636-8c70-5ac6fb5b38fd" /> | <img width="200" src="https://github.com/user-attachments/assets/b5e8f455-84c0-4d3b-956d-0c8145604779" /> | <img width="200" src="https://github.com/user-attachments/assets/ffae9e3a-5b3c-4eca-8742-08282520e474" /> |
- 
+
 | Detail Produk | My Bag (Keranjang) | Order Confirmed |
 |:---:|:---:|:---:|
 | <img width="200" src="https://github.com/user-attachments/assets/bca24934-3cb4-4de7-96c2-da9e634da199" /> | <img width="200" src="https://github.com/user-attachments/assets/20cde190-89e9-4528-a7be-277edbbafa93" /> | <img width="200" src="https://github.com/user-attachments/assets/00f6319c-b74c-4179-adde-4193a143cbcc" /> |
@@ -75,7 +75,12 @@ Flutter App
             │
             └─ Golang verifikasi token via Firebase Admin SDK
                     │
-                    └─ Return access_token (UID)
+                    └─ Return JWT Token (access_token)
+                            │
+                            └─ Flutter simpan JWT di Secure Storage
+                                    │
+                                    └─ JWT dikirim di setiap request API
+                                       sebagai Bearer Token
 ```
 
 1. User register/login di Flutter menggunakan Firebase Auth
@@ -83,7 +88,14 @@ Flutter App
 3. Setelah verified, Flutter mendapat **ID Token** dari Firebase
 4. ID Token dikirim ke backend Golang via `POST /v1/auth/verify-token`
 5. Golang memverifikasi token menggunakan **Firebase Admin SDK**
-6. Backend return `access_token` (UID) untuk sesi user
+6. Backend return **JWT Token** sebagai `access_token`
+7. Flutter menyimpan JWT Token di **Secure Storage**
+8. Setiap request ke API, JWT Token dikirim sebagai **Bearer Token** di header `Authorization`
+
+### Contoh Header Request dengan JWT
+```
+Authorization: Bearer <jwt_token>
+```
 
 ---
 
