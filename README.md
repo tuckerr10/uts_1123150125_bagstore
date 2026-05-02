@@ -6,7 +6,7 @@
 
 ## 📱 Demo Aplikasi
 
-> 🎥 **Video Demo YouTube:** [Klik di sini untuk menonton demo](https://www.youtube.com/watch?v=LINK_VIDEO_DISINI)
+> 🎥 **Video Demo YouTube:** [Klik di sini untuk menonton demo](https://youtu.be/aW3JTUPGSsELINK=_VIDEO_DISINI)
 
 > **Nama : Moh Frendy Aprianto**
 > 
